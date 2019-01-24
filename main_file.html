@@ -1,0 +1,1620 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>
+        PortfoView
+    </title>
+
+    <meta name="author" content="Shyam">
+    
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resume1.css">
+    <link rel="stylesheet" href="resume2.css">
+    <link rel="stylesheet" href="resume3.css">
+    <link rel="stylesheet" href="main_file.css">
+
+
+    <script>
+        $(document).ready(function () {
+            $(".h_but").hover(function () {
+                $(this).css("color", "black").css("text-decoration", "underline");
+            }, function () {
+                $(this).css("color", "grey").css("text-decoration", "none");
+            });
+        });
+    </script>
+
+    <script>
+
+        function checkAll(form) {
+
+            var x = 0, y = 0;
+            if (/^[a-z A-Z]{1,50}$/.test(form.name.value) == false) {
+                x = 1;
+                document.getElementById("basic1").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("basic1").innerHTML = ""; }
+            if (/^[a-z A-Z]{1,50}$/.test(form.task.value) == false) {
+                x = 1;
+                document.getElementById("basic2").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("basic2").innerHTML = ""; }
+
+
+            // personal section
+
+
+            if (/^[0-9]{10}$/.test(form.mobile.value) == false) {
+                x = 1;
+                document.getElementById("personal1").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("personal1").innerHTML = ""; }
+
+            if (/^[a-zA-Z0-9.]+[@][a-z.]+$/i.test(form.email1.value) == false) {
+                x = 1;
+                document.getElementById("personal2").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("personal2").innerHTML = ""; }
+
+            if (/^[a-zA-Z0-9.]+[@][a-z.]+$/i.test(form.email2.value) == false) {
+                x = 1;
+                document.getElementById("personal3").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("personal3").innerHTML = ""; }
+
+            if (/^[a-zA-Z0-9, /-]{4,100}$/i.test(form.address.value) == false) {
+                x = 1;
+                document.getElementById("personal4").innerHTML = "<span style='color:red;font-size:10px;'>&nbsp;&nbsp;&nbsp;&nbsp;* Invalid or inappropriate input</span>";
+                //return false;
+            }
+            else { document.getElementById("personal4").innerHTML = ""; }
+
+
+            //skill section
+
+
+            // if(/^[a-zA-Z0-9, /-]{4,100}$/i.test(form.address.value)==false)
+            // {
+            //     x=1;
+            //     document.getElementById("add").innerHTML="<span style='color:red;font-size:10px;'>Please fill out your Address (min 4 to max 100 characters)</span>";
+            // }
+            // else
+            // document.getElementById("add").innerHTML="";
+            // if(form.circle.value=='Invalid')
+            // {
+            //     x=1;
+            //     document.getElementById("tele").innerHTML="<span style='color:red;font-size:10px;'>Please Select your region</span>";
+            // }
+            // else
+            // document.getElementById("tele").innerHTML="";
+            // if(/^[a-zA-Z0-9.]+[@][a-z.]+$/i.test(form.email.value)==false)
+            // {
+            //     x=1;
+            //     document.getElementById("mail").innerHTML="<span style='color:red;font-size:10px;'>Invalid Email</span>";
+            // }
+            // else
+            // document.getElementById("mail").innerHTML="";
+
+            a1 = form.img_select1.checked;
+            a2 = form.img_select2.checked;
+            a3 = form.img_select3.checked;
+
+
+            if (x == 0) {
+                if (a3 === true) {
+
+                    document.getElementById("main_frame").style.filter = "blur(2px)";
+                    $(document).ready(function () {
+                        $(".res3_main").show("slow");
+                    });
+                    document.getElementById("my_name3").innerHTML = form.name.value;
+                    document.getElementById("my_task3").innerHTML = form.task.value;
+                    document.getElementById("my_summary3").innerHTML = form.summary.value;
+                    // document.getElementById("my_phone3").innerHTML = form.mobile.value;
+                    document.getElementById("my_email31").innerHTML = form.email1.value;
+                    document.getElementById("my_email32").innerHTML = form.email2.value;
+                    document.getElementById("my_address3").innerHTML = form.address.value;
+                    
+                    
+                    // document.getElementById("addres").innerHTML=form.address.value;
+                    // document.getElementById("mailer").innerHTML=form.email.value;
+                    // document.getElementById("telecom").innerHTML=form.circle.value;
+                    // if(a1===true)
+                    // {
+                    //     document.getElementById("griev").innerHTML+=" <br>Huge Bills for limited mobile usage  ";
+                    // }
+                    // if(a2===true)
+                    // {
+                    //     document.getElementById("griev").innerHTML+=" <br>Very High Roaming Charges  ";
+                    // }
+                    // if(a3===true)
+                    // {
+                    //     document.getElementById("griev").innerHTML+=" <br>Frequent service Disruption  ";
+                    // }
+                    x = 1;
+                    y = 1;
+                }
+                // else{
+                //     document.getElementById("bod").style.filter="blur(2px)";  
+                //     $(document).ready(function(){
+                //         $("#no_grievence").show("slow");
+                //     });
+                //     x=1;
+                //     y=2;
+                // }
+            }
+            if (y == 1) {
+                $(document).ready(function () {
+                    $(".res3_main").mouseleave(function () {
+                        $(this).hide('slow');
+                        document.getElementById("main_frame").style.filter = "blur(0px)";
+                        x = 0;
+                    });
+                    $('#form1').trigger("reset");
+                });
+            }
+            // if(y==2)
+            // {
+            //     $(document).ready(function(){
+            //     $("#no_grievence").mouseleave(function()
+            //         {
+            //             $(this).hide('slow');
+            //             document.getElementById("bod").style.filter="blur(0px)";  
+            //             x=0;
+            //         });
+            //         $('#form1').trigger("reset");
+            //     });
+            // }
+            if (x === 1) {
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body style="background:white;" id="bod">
+    <div class="main_frame" id="main_frame">
+        <div class="header_main">
+            <span class="head_val">PortfoView</span><br>
+            <span class="tagline">Your one stop destination for resume ...</span>
+            <div class="header_buttons">
+                <div class="h_but">
+                    Login
+                </div>
+                <div class="h_but">
+                    Register
+                </div>
+            </div>
+        </div>
+        <div class="main_body">
+
+
+            <form onsubmit='return checkAll(this)' id="form1" name="form1" method="POST" autocomplete="on">
+                <div class="img_selector">
+                    <div class="img_selector_head">
+                        Select The Layout ..
+                    </div>
+                    <div class="image1">
+                        <img src="https://cdn-images.zety.com/templates/zety/cubic-20-trio-silver-dark-19.png">
+                    </div>
+                    <div class="image2">
+                        <img src="https://cdn-images.zety.com/templates/zety/iconic-9-classic-silver-dark-276.png">
+                    </div>
+                    <div class="image3">
+                        <img src="https://cdn-images.zety.com/templates/zety/cascade-3-duo-blue-navy-21.png">
+                    </div>
+                </div>
+                <div class="selector_buttons">
+                    1st LAYOUT: <input type="radio" name="img_select1">&nbsp;&nbsp;&nbsp;&nbsp;
+                    2nd LAYOUT: <input type="radio" name="img_select2">&nbsp;&nbsp;&nbsp;&nbsp;
+                    3rd LAYOUT: <input type="radio" name="img_select3">
+                </div>
+                <br><br>
+                <div class="basic_info">
+                    <p class="basic_head">Basic Information</p>
+                    <hr width="80%" align="left">
+                    Name:<span id="basic1"></span><br>
+                    <input type="text" id="name" name="name" placeholder="Name" true>
+                    <br>
+                    <br>
+                    My Job:<span id="basic2"></span><br>
+                    <input type="text" id="task" name="task" placeholder="job-position" true>
+                    <br>
+                    <br>
+                    Who I am:<br>
+                    <textarea rows="10" cols="80" placeholder="Describe Yourself" name="summary" id="summary">NA</textarea>
+                    <br>
+                    <br>
+                </div>
+                <br>
+                <br>
+                <div class="personal_info">
+                    <p class="personal_head">Personal Information </p>
+                    <hr width="80%" align="left">
+                    <br>
+                    Mobile Number <span id="personal1"></span><br>
+                    <input type="number" id="mobile" name="mobile" placeholder="Mobile Number" true>
+                    <br>
+                    <br>
+                    Email ID (work) <span id="personal2"></span><br>
+                    <input type="email" id="email1" name="emali1" placeholder="Email ID (work)" true>
+                    <br>
+                    <br>
+                    Email ID (LinkedIn) <span id="personal3"></span><br>
+                    <input type="email" id="email2"  name="email2" placeholder="Email ID (LinkedIn)" true>
+                    <br>
+                    <br>
+                    Address: <span id="personal4"></span><br>
+                    <textarea rows="10" cols="50" name="address" placeholder="Home Address" id="address"></textarea>
+                    <br>
+                    <br>
+                </div>
+                <div class="skills">
+                    <p class="skills_head">Skills <span style="font-size:15px;font-weight:normal;">(any 5 true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+
+                    <ul>
+                        <li><input type="text" id="skill1" name="skill1" placeholder="skill 1" true></li><br>
+                        <li><input type="text" id="skill2" name="skill2" placeholder="skill 2" true></li><br>
+                        <li><input type="text" id="skill3" name="skill3" placeholder="skill 3" true></li><br>
+                        <li><input type="text" id="skill4" name="skill4" placeholder="skill 4" true></li><br>
+                        <li><input type="text" id="skill5" name="skill5" placeholder="skill 5" true></li><br>
+
+                    </ul>
+                </div>
+                <br>
+                <div class="softwares">
+                    <p class="softwares_head">Software Experience <span style="font-size:15px;font-weight:normal;">(with
+                            rating (1-5))(any 5 true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+
+                    <ul>
+                        <li><input type="text" id="soft1" name="soft1" placeholder="soft 1" true>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"
+                                id="soft1_rat"></li><br>
+                        <li><input type="text" id="soft2" name="soft2"  placeholder="soft 2" true>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"
+                                id="soft1_rat"></li><br>
+                        <li><input type="text" id="soft3"  name="soft3" placeholder="soft 3" true>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"
+                                id="soft1_rat"></li><br>
+                        <li><input type="text" id="soft4" name="soft4"  placeholder="soft 4" true>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"
+                                id="soft1_rat"></li><br>
+                        <li><input type="text" id="soft5"  name="soft5" placeholder="soft 5" true>&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"
+                                id="soft1_rat"></li><br>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="softwares">
+                    <p class="softwares_head">Languages <span style="font-size:15px;font-weight:normal;">(with rating
+                            (1-5))(any 2 true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+
+                    <ul>
+                        <li><input type="text" id="lang1" name="lang1" placeholder="Language 1" true>&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                type="number" id="lang1_rat"></li><br>
+                        <li><input type="text" id="lang2"  name="lang2" placeholder="Language 2" true>&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                type="number" id="lang1_rat"></li><br>
+                    </ul>
+                </div>
+
+                <br>
+                <div class="experience">
+                    <p class="Experience_head">Experiences <span style="font-size:15px;font-weight:normal;">(3
+                            true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+                    JOB 1:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_date11" placeholder="Start Date(YYYY-MM)">&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_date12" placeholder="End Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_post1" placeholder="Position" true>&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_loc1" placeholder="Location" true><br>
+                    <br>Any 4 positive points about you and that company
+                    <ul>
+                        <li><input type="text" id="job1_point1" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job1_point2" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job1_point3" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job1_point4" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                    </ul>
+                    <br>
+                    JOB 2:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_date21" placeholder="Start Date(YYYY-MM)">&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_date22" placeholder="End Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_post2" placeholder="Position" true>&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_loc2" placeholder="Location" true><br>
+                    <br>Any 4 positive points about you and that company
+                    <ul>
+                        <li><input type="text" id="job2_point1" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job2_point2" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job2_point3" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job2_point4" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                    </ul>
+
+                    <br>
+                    JOB 3:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_date31" placeholder="Start Date(YYYY-MM)">&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_date32" placeholder="End Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="exp_post3" placeholder="Position" true>&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="exp_loc3" placeholder="Location" true><br>
+                    <br>Any 4 positive points about you and that company
+                    <ul>
+                        <li><input type="text" id="job3_point1" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job3_point2" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job3_point3" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="job3_point4" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                    </ul>
+
+                </div>
+
+
+                <br>
+                <div class="education">
+                    <p class="education_head">Education <span style="font-size:15px;font-weight:normal;">(2 fields
+                            true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+                    Bachelors Degree:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="edu_date11" placeholder="Start Date(YYYY-MM)">&nbsp;&nbsp;&nbsp;<input
+                        type="text" name="edu_date12" placeholder="End Date(YYYY-MM)"><br>
+                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="edu_post1" placeholder="Position" true>&nbsp;&nbsp;&nbsp;<input type="text" id="exp_loc1" placeholder="Location" true><br>  -->
+                    <br>Any 3 positive points about you and your College
+                    <ul>
+                        <li><input type="text" id="edu1_point1" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="edu1_point2" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="edu1_point3" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <!-- <li><input type="text" id="job1_point4" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>                                                         -->
+                    </ul>
+                    <br>
+                    School:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="edu_date21" placeholder="Start Date(YYYY-MM)">&nbsp;&nbsp;&nbsp;<input
+                        type="text" id="edu_date22" placeholder="End Date(YYYY-MM)"><br>
+                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="exp_post2" placeholder="Position" true>&nbsp;&nbsp;&nbsp;<input type="text" id="exp_loc2" placeholder="Location" true><br>  -->
+                    <br>Any 3 positive points about you and your School
+                    <ul>
+                        <li><input type="text" id="edu2_point1" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="edu2_point2" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <li><input type="text" id="edu2_point3" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+                        <!-- <li><input type="text" id="job2_point4" placeholder="" true>&nbsp;&nbsp;&nbsp;&nbsp;</li><br>                                                         -->
+                    </ul>
+
+                </div>
+
+                <br>
+                <div class="certification">
+                    <p class="certification_head">Certifications <span style="font-size:15px;font-weight:normal;">(3
+                            fields true)</span></p>
+                    <hr width="80%" align="left">
+                    <br>
+                    Certificate 1:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi_date1" placeholder="Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi1" placeholder="Certification 1"
+                        true><br>
+                    <br>
+                    Certificate 2:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi_date2" placeholder="Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi2" placeholder="Certification 2"
+                        true><br>
+                    <br>
+                    Certificate 3:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi_date3" placeholder="Date(YYYY-MM)">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="certi3" placeholder="Certification 3"
+                        true><br>
+                    <br>
+                </div>
+                <div class="submission">
+                    <input type="submit" id="sub" value="Generate My Resume">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- from here starts the layout part -->
+
+    <!-- LAYOUT 1 -->
+
+    <div class=res1_main>
+        <div class="header1">
+            <span style="font-size:38px;font-weight:700;" id="my_name">John Smith</span><br>
+            <span id="my_task">IT Project Manager</span>
+        </div>
+        <div class="res1_left" style="font-size:17px;">
+            <p id="my_summary">IT Professional with over 10 years of experience in IT department Management for
+                international logistic companies. I can implement effective IT strategies at local and global
+                levels.
+                My
+                greatest strength is business awareness, which enables me to permanently streamline infrastructure
+                and
+                applications. Striving to leverage my skills at SanCorp Inc.</p>
+            <br>
+            <span id="my_experience" style="font-weight:600;font-size:30px;">Experience</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        2006-12-<br> present
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Senior Project Manager</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Oversaw all major hospital IT projects for 10+ years, focus on cost reduction.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Responsible for creating, improving, and developing IT project strtegies.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented the highly sucessful Learn Training and Six Sigma Projects.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Cut costs by 32% in less than six months.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2004-09-<br> 2006-12
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Junior Project Manager</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Streamlined IT logistics and administration operating cutting costs by 25%.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Diagnosed problems with hardware and operating systems.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully migrated two servers to new data architecture
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Maintained the user database of over 3000 participants.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2002-08-<br> 2004-09
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">IT Support Officer</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Provided support for project managers and hospital staff for 2 years.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Prepared over 100 infrastructure performance analyses and reports.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented a new tracking dashboard, cutting manual data input bt 80%.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully resolved over 200 issues in regards to IT infrastructure.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Education -->
+
+            <br>
+            <span id="my_education" style="font-weight:500;font-size:30px;">Education</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        1999-09-<br> 2001-05
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Master of Computer Science, University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Anderson Postgraduate Fellowship to study advanced nursing techniques.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to develop a weekly nursing podcast. </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        1996-09-<br> 1999-06
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Bachelor of Computer Science, University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Member of Student Association of Compute Science</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to organize a conference for 50+ professionals.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Certificates -->
+            <br>
+            <span id="my_certificates" style="font-weight:500;font-size:30px;">Certifications</span>
+            <hr width="90%" align="left">
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2010-05
+                    </td>
+                    <td>
+                        PMP - Project Management Institute
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        2007-11
+                    </td>
+                    <td>
+                        CAPM - Project Management Institute</td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        2003-04
+                    </td>
+                    <td>
+                        PRINCE2&reg; Foundation</td>
+                </tr>
+            </table>
+        </div>
+        <div class="res1_right" style="font-size:17px;">
+            <span id="my_personal_info" style="font-weight:500;font-size:30px;">Personal Info</span>
+            <hr width="90%" align="left">
+
+            <p class="address"><span class="res1_pers">Address</span><br>
+                134 Rightward Way,<br>Portland, ME, 04019
+            </p>
+            <p class="phone"><span class="res1_pers">Phone</span><br>
+                774-987-4009
+            </p>
+            <p class="email"><span class="res1_pers">E-mail</span><br>
+                j.snith@uptowork.com
+            </p>
+            <p class="otherID"><span class="res1_pers">LinkedIn</span><br>
+                linkedin.com/johnutw
+            </p>
+            <br>
+            <span id="my_skills" style="font-weight:500;font-size:30px;">Skills</span>
+            <hr width="90%" align="left"><br>
+            Business Process Improvement<br><br>
+            Vendor Management<br><br>
+            Sales Analysis<br><br>
+            Strategic Planning<br><br>
+            Communication Skills<br><br>
+            <br>
+            <span id="my_software" style="font-weight:500;font-size:30px;">Software</span>
+            <hr width="90%" align="left">
+            <br>
+            Microsoft Project
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                </div>
+                <div class="rating_val1">Excellent</div>
+            </div>
+            <br><br>
+            MS Windows Server
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle"></span>
+                </div>
+                <div class="rating_val1">Very Good</div>
+            </div>
+            <br><br>
+            Linux / Unix
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle"></span>
+                </div>
+                <div class="rating_val1">Very Good</div>
+            </div>
+            <br><br>
+            Microsoft Excel
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle"></span>
+                    <span class="fa fa-circle"></span>
+                </div>
+                <div class="rating_val1">Good</div>
+            </div>
+            <br><br>
+            <span id="my_language" style="font-weight:500;font-size:30px;">Languages</span>
+            <hr width="90%" align="left">
+            <br>
+            French
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle"></span>
+                    <span class="fa fa-circle"></span>
+                </div>
+                <div class="rating_val1">Intermediate</div>
+            </div>
+            <br><br>
+            Spanish
+            <div class="res1_rating">
+                <div class="rating_icon1">
+                    <span class="fa fa-circle checked"></span>
+                    <span class="fa fa-circle"></span>
+                    <span class="fa fa-circle"></span>
+                    <span class="fa fa-circle"></span>
+                    <span class="fa fa-circle"></span>
+                </div>
+                <div class="rating_val1">Basic</div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class=res2_main>
+        <div class="header2">
+            <span style="font-size:45px;font-weight:800;" id="my_name">John Smith</span><br>
+            <span id="my_task">IT Project Manager</span>
+        </div>
+        <div class="res2" style="font-size:17px;">
+
+            <div>
+
+                <table class="res2_pers" cellpadding="5">
+                    <tr>
+                        <td class="phone"><span class="fa fa-phone-square fa-2x"></span>&nbsp;&nbsp;774-987-4009</td>
+                        <td class="otherID"><span class="fa fa-linkedin-square fa-2x"></span>&nbsp;&nbsp;linkedin.com/johnutw</td>
+                    </tr>
+                    <tr>
+                        <td class="email"><span class="fa fa-envelope-square fa-2x"></span>&nbsp;&nbsp;j.snith@uptowork.com</td>
+                        <td class="address"><span class="fa fa-home fa-2x"></span>&nbsp;&nbsp;134, Rightward Way,<br>Portland,
+                            ME, 04019</td>
+
+                    </tr>
+                </table>
+
+            </div>
+            <br>
+            <p id="my_summary">IT Professional with over 10 years of experience in IT department Management for
+                international logistic companies. I can implement effective IT strategies at local and global
+                levels.
+                My
+                greatest strength is business awareness, which enables me to permanently streamline infrastructure
+                and
+                applications. Striving to leverage my skills at SanCorp Inc.</p>
+            <br>
+            <span id="my_experience" style="font-weight:600;font-size:30px;"><span class="fa fa-briefcase" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Experience</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        2006-12 - present
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Senior Project Manager</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Oversaw all major hospital IT projects for 10+ years, focus on cost reduction.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Responsible for creating, improving, and developing IT project strtegies.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented the highly sucessful Learn Training and Six Sigma Projects.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Cut costs by 32% in less than six months.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2004-09 - 2006-12
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Junior Project Manager</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Streamlined IT logistics and administration operating cutting costs by 25%.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Diagnosed problems with hardware and operating systems.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully migrated two servers to new data architecture
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Maintained the user database of over 3000 participants.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2002-08 - 2004-09
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">IT Support Officer</span><br>
+                        <i><span style="font-size:20px;">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Provided support for project managers and hospital staff for 2 years.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Prepared over 100 infrastructure performance analyses and reports.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented a new tracking dashboard, cutting manual data input bt 80%.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully resolved over 200 issues in regards to IT infrastructure.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Education -->
+
+            <br><br>
+            <span id="my_education" style="font-weight:500;font-size:30px;"><span class="fa fa-graduation-cap" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Education</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        1999-09 - 2001-05
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Master of Computer Science, University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Anderson Postgraduate Fellowship to study advanced nursing techniques.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to develop a weekly nursing podcast. </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        1996-09 - 1999-06
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;">Bachelor of Computer Science, University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Member of Student Association of Compute Science</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to organize a conference for 50+ professionals.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Certificates -->
+            <br><br>
+            <span id="my_certificates" style="font-weight:500;font-size:30px;"><span class="fa fa-certificate" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Certifications</span>
+            <hr width="90%" align="left">
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        2010-05
+                    </td>
+                    <td>
+                        PMP - Project Management Institute
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        2007-11
+                    </td>
+                    <td>
+                        CAPM - Project Management Institute</td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        2003-04
+                    </td>
+                    <td>
+                        PRINCE2&reg; Foundation</td>
+                </tr>
+            </table>
+
+            <br><br>
+            <span id="my_skills" style="font-weight:500;font-size:30px;"><span class="fa fa-puzzle-piece" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Skills</span>
+            <hr width="90%" align="left"><br>
+            <p class="res2_skills">Business Process Improvement<br><br>
+                Vendor Management<br><br>
+                Sales Analysis<br><br>
+                Strategic Planning<br><br>
+                Communication Skills<br><br></p>
+            <br>
+            <span id="my_softwa1e" style="font-weight:500;font-size:30px;"><span class="fa fa-desktop" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Software</span>
+            <hr width="90%" align="left" color="grey">
+            <br>
+            <span class="res2_soft">Microsoft Project</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                </div>
+                <div class="rating_val2">Excellent</div>
+            </div>
+            <br>
+            <span class="res2_soft">MS Windows Server</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square"></span>
+                </div>
+                <div class="rating_val2">Very Good</div>
+            </div>
+            <br>
+            <span class="res2_soft">Linux / Unix</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square"></span>
+                </div>
+                <div class="rating_val2">Very Good</div>
+            </div>
+            <br>
+            <span class="res2_soft">Microsoft Excel</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square"></span>
+                    <span class="fa fa-square"></span>
+                </div>
+                <div class="rating_val2">Good</div>
+            </div>
+            <br>
+            <span id="my_langua1e" style="font-weight:500;font-size:30px;"><span class="fa fa-language" style="font-size:40px"></span>&nbsp;&nbsp;&nbsp;Languages</span>
+            <hr width="90%" align="left" color="grey">
+            <br>
+            <span class="res2_lang">French</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square checked2"></span>
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-square"></span>
+                    <span class="fa fa-square"></span>
+                </div>
+                <div class="rating_val2">Intermediate</div>
+            </div>
+            <br>
+            <span class="res2_lang">Spanish</span>
+            <div class="res2_rating">
+                <div class="rating_icon2">
+                    <span class="fa fa-square checked2"></span>
+                    <span class="fa fa-1square"></span>
+                    <span class="fa fa-square"></span>
+                    <span class="fa fa-square"></span>
+                    <span class="fa fa-square"></span>
+                </div>
+                <div class="rating_val2">Basic</div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="res3_main">
+
+        <div class="res3_right1">
+            <div class="header3">
+                <span style="font-size:38px;font-weight:700;" id="my_name3">John Smith</span><br>
+                <span id="my_task3">IT Project Manager</span>
+            </div>
+            <div class="res3_right" style="font-size:17px;font-weight:lighter">
+                <div id="my_personal_info" style="font-weight:700;font-size:30px;">Personal Info</div>
+                <!-- <hr width="90%" align="left"> -->
+
+                <p class="address"><span class="res3_pers">Address</span><br>
+                    <span id="my_address3">134 Rightward Way,<br>Portland, ME, 04019</span>
+                </p>
+                <p class="phone"><span class="res3_pers">Phone</span><br>
+                    <span id="my_phone3">774-987-4009</span>
+                </p>
+                <p class="email"><span class="res3_pers">E-mail</span><br>
+                    <span id="my_email31">j.snith@uptowork.com</span>
+                </p>
+                <p class="otherID"><span class="res3_pers">LinkedIn</span><br>
+                    <span id="my_email32">linkedin.com/johnutw</span>
+                </p>
+                <br>
+                <div id="my_skills" style="font-weight:700;font-size:30px;">Skills</div>
+                <!-- <hr width="90%" align="left"><br> -->
+                <br>
+                <span id="my_skills3">
+                    Business Process Improvement<br><br>
+                    Vendor Management<br><br>
+                    Sales Analysis<br><br>
+                    Strategic Planning<br><br>
+                    Communication Skills<br><br>
+                </span>
+                <br>
+                <div id="my_software" style="font-weight:700;font-size:30px;">Software</div>
+                <!-- <hr width="90%" align="left"> -->
+                <br>
+                <span id="my_soft31">Microsoft Project</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                    </div>
+                    <div class="rating_val1">Excellent</div>
+                </div>
+                <br><br>
+                <span id="my_soft32">MS Windows Server</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="rating_val1">Very Good</div>
+                </div>
+                <br><br>
+                <span id="my_soft33">Linux / Unix</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="rating_val1">Very Good</div>
+                </div>
+                <br><br>
+                <span id="my_soft34">Microsoft Excel</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="rating_val1">Good</div>
+                </div>
+                <br><br>
+                <div id="my_language" style="font-weight:700;font-size:30px;">Languages</div>
+                <!-- <hr width="90%" align="left"> -->
+                <br>
+                <span id="my_language31">French</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="rating_val1">Intermediate</div>
+                </div>
+                <br><br>
+                <span id="my_language32">Spanish</span>
+                <div class="res3_rating">
+                    <div class="rating_icon3">
+                        <span class="fa fa-star checked3"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="rating_val3">Basic</div>
+                </div>
+            </div>
+        </div>
+        <div class="res3_left" style="font-size:17px;">
+            <p id="my_summary3">IT Professional with over 10 years of experience in IT department Management for
+                international logistic companies. I can implement effective IT strategies at local and global
+                levels.
+                My
+                greatest strength is business awareness, which enables me to permanently streamline infrastructure
+                and
+                applications. Striving to leverage my skills at SanCorp Inc.</p>
+            <br>
+            <hr width="90%" align="left">
+            <span id="my_experience" style="font-weight:700;font-size:30px;">Experience</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date31i">2006-12-</span><br><span id="my_date31f">present</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;" id="my_post31">Senior Project Manager</span><br>
+                        <i><span style="font-size:20px;" id="my_loc31">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Oversaw all major hospital IT projects for 10+ years, focus on cost reduction.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Responsible for creating, improving, and developing IT project strtegies.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented the highly sucessful Learn Training and Six Sigma Projects.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Cut costs by 32% in less than six months.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date32i">2004-09-</span><br> <span id="my_date32f">2006-12</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;" id="my_post32">Junior Project Manager</span><br>
+                        <i><span style="font-size:20px;" id="my_loc32">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Streamlined IT logistics and administration operating cutting costs by 25%.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Diagnosed problems with hardware and operating systems.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully migrated two servers to new data architecture
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Maintained the user database of over 3000 participants.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date33i">2002-08-</span><br><span id="my_date33f">2004-09</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;" id="my_post33">IT Support Officer</span><br>
+                        <i><span style="font-size:20px;" id="my_loc33">Seton Hospital, ME</span></i><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Provided support for project managers and hospital staff for 2 years.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Prepared over 100 infrastructure performance analyses and reports.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Implemented a new tracking dashboard, cutting manual data input bt 80%.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Successfully resolved over 200 issues in regards to IT infrastructure.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Education -->
+
+            <br>
+            <hr width="90%" align="left">
+            <span id="my_education" style="font-weight:700;font-size:30px;">Education</span>
+            <hr width="90%" align="left">
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date34i">1999-09-</span><br><span id="my_date34f">2001-05</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;" id="my_post34">Master of Computer Science,
+                            University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Anderson Postgraduate Fellowship to study advanced nursing techniques.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to develop a weekly nursing podcast. </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date35i">1996-09-</span><br><span id="my_date35f">1999-06</span>
+                    </td>
+                    <td>
+                        <span style="font-weight:500;font-size:25px;" id="my_post35">Bachelor of Computer Science,
+                            University of
+                            Maryland</span><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Graduated Summa Cum Laude.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Member of Student Association of Compute Science</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>
+                                Managed a student project to organize a conference for 50+ professionals.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Certificates -->
+            <br>
+            <hr width="90%" align="left">
+            <span id="my_certificates" style="font-weight:700;font-size:30px;">Certifications</span>
+            <hr width="90%" align="left">
+
+            <table>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date36">2010-05</span>
+                    </td>
+                    <td id="my_post36">
+                        PMP - Project Management Institute
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date37">2007-11</span>
+                    </td>
+                    <td id="my_post37">
+                        CAPM - Project Management Institute</td>
+                </tr>
+                <tr>
+                    <td class="dates">
+                        <span id="my_date38">2003-04</span>
+                    </td>
+                    <td id="my_post38">
+                        PRINCE2&reg; Foundation</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

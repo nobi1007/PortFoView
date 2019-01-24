@@ -1,0 +1,83 @@
+td {
+    font-size: 17px;
+    padding-left: 2%;
+}
+
+.dates {
+    font-weight: 600;
+    font-size: 18px;
+    /* padding-left: 1%; */
+}
+
+/* table,td,tr{
+    border:solid 1px black;
+} */
+table {
+    width: 90%;
+}
+
+table.res2_pers {
+    font-size: 15px;
+    padding-left: -6%;
+    width: 70%;
+    height: auto;
+}
+
+.res2 {
+    padding-left: 3%;
+    position: relative;
+    float: left;
+    width: 99%;
+    margin-top: 4%;
+}
+
+.res2_main {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    background: white;
+    top:0px;
+}
+
+body {
+    background: black;
+}
+
+
+.header2 {
+    position: relative;
+    background:rgb(30, 58, 94);
+    z-index: 1;
+    width: 98%;
+    height: 18%;
+    padding-top: 20px;
+    padding-left: 2%;
+    color:white;
+}
+
+.checked2 {
+    color: coral;
+}
+
+.res2_rating {
+    position: relative;
+    width: 100%;
+}
+
+.rating_icon2 {
+    position: relative;
+    padding-left: 60%;
+}
+
+.rating_val2 {
+    position: relative;
+    padding-left: 60%;
+}
+
+.res2_skills,
+.res2_soft,
+.res2_lang {
+    padding-left: 23%;
+}

@@ -1,0 +1,116 @@
+  td {
+            font-size: 17px;
+            padding-left: 3%;
+
+        }
+
+        .dates {
+            font-weight: 600;
+            font-size: 18px;
+            padding-left: 1%;
+        }
+
+        .res3_pers {
+            font-weight: 600;
+            font-size: 18px;
+            padding-left: 1%;
+        }
+
+        /* table,td,tr{
+            border:solid 1px black;
+        } */
+
+        
+
+        .res3_right1 {
+
+            position: relative;
+            float: left;
+            width: 28%;
+            /* margin-top: 12%; */
+            padding-top: 20px;
+            padding-left: 2%;
+            /* margin-left:0%; */
+            background:rgb(51, 51, 192);
+            overflow:auto;
+            color:white;
+        }
+
+        .header3 {
+            position: relative;
+            /* z-index: 1; */
+            width: auto;
+            /* margin-top: 18%; */
+            padding-top: 2%;
+            /* padding-left: 2%; */
+            /* background: darkslategray; */
+            /* color: lime; */
+            height: 10%;
+            /* background: rgb(231, 231, 231); */
+        }
+
+
+        .res3_right {
+
+            position: relative;
+            float: left;
+            /* width: 28%;*/
+            margin-top: 12%;
+            width:100%;
+            /* padding-top: 20px;
+            /* padding-left: 2%; */
+            /* background: rgb(231, 231, 231);  */
+        }
+
+        .res3_left {
+            padding-left: 2%;
+            position: relative;
+            float: left;
+            width: 68%;
+            margin-top: 1%;
+        }
+
+
+        .res3_main {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            width: 80%;
+            position: absolute;
+            top:20px;
+            left: 10%;
+            right: 10%;
+            background: white;
+            z-index:1;
+        }
+
+        body {
+            background: black;
+        }
+
+       .checked3 {
+            color: orange;
+        }
+
+        .res3_rating {
+            position: relative;
+            width: 100%;
+        }
+
+        .rating_icon3 {
+            position: relative;
+            padding-left: 60%;
+        }
+
+        .rating_val3 {
+            position: relative;
+            padding-left: 60%;
+        }
+
+        
+        #my_personal_info,#my_skills,#my_software,#my_language{
+            width:100%;
+            background:rgba(10, 10, 80, 0.795);
+        }
+
+        #my_summary,#my_education,#my_experience,#my_certificates{
+            color:rgb(51, 51, 192);
+        }
